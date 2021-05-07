@@ -212,8 +212,8 @@ td{
 .who{
     position: absolute;
     top: 20%;
-    left: 0%;
-    width: 100%;
+    left: 30%;
+    /* width: 100%; */
     color: #fff;
     font-size: 20px;
     font-weight: bold;
