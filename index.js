@@ -257,7 +257,7 @@ function winner(p, t1){
       setTimeout(function(){gameReset();}, 2000);
     }
 
-  //console.log(t1);
+  console.log(t1);
 
 
 
