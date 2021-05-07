@@ -84,6 +84,19 @@ table{
     border-radius: 10px;
 }
 
+.r1 td{
+    border-bottom: 3px solid #fff;
+
+}
+
+.r2 td{
+    border-bottom: 3px solid #fff;
+
+}
+
+.c1{
+    border-right: 3px solid #fff;
+}
 
 td{
     padding: 0px;
@@ -97,6 +110,7 @@ td{
 }
 
 .l1, .l2{
+    display: none;
     position: absolute;
     height: 3.5px;
     width: 211px;
@@ -129,6 +143,7 @@ td{
 
 
 .l3, .l4{
+    display: none;
     position: absolute;
     width: 3.5px;
     height: 209.5px;
