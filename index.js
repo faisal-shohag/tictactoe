@@ -109,8 +109,8 @@ db.ref('playerSymbole').on('value', ps=> {
 
 db.ref('playerWon').on('value', pw=> {
  let rn =  Math.floor(Math.random() * 8);
- $('.who').html(`<div class="animate__animated animate__backInLeft"><span who class="pname">${oyshi[rn]}</span> তোমার চাল!</div>`);
-  if(pw.val().won === 2) $('.who').html(`<div class="animate__animated animate__backInLeft"><span class="pname who animate__animated animate__backInRight">ফয়সালের</span> চাল!</div>`);
+ $('.who').html(`<div class="animate__animated animate__backInDown"><span who class="pname">${oyshi[rn]}</span> তোমার চাল!</div>`);
+  if(pw.val().won === 2) $('.who').html(`<div class="animate__animated animate__backInDown"><span class="pname who animate__animated animate__backInRight">ফয়সালের</span> চাল!</div>`);
 });
 
 
@@ -130,11 +130,11 @@ function whosTurn(){
   db.ref('whosTurn').on('value', wt=>{
     let rn =  Math.floor(Math.random() * 8)
     if(wt.val().state===1){ 
-      $('.who').html(`<div class="animate__animated animate__backInLeft"><span who class="pname">${oyshi[rn]}</span> তোমার চাল!</div>`);
+      $('.who').html(`<div class="animate__animated animate__backInDown"><span who class="pname">${oyshi[rn]}</span> তোমার চাল!</div>`);
       playerOneTurn();
     }
     if(wt.val().state===2){ 
-      $('.who').html(`<div class="animate__animated animate__backInRight"><span who class="pname animate__animated animate__backInRight">ফয়সালের</span> চাল!</div>`);
+      $('.who').html(`<div class="animate__animated animate__backInDown"><span who class="pname animate__animated animate__backInRight">ফয়সালের</span> চাল!</div>`);
       playerTwoTurn();
     }
   });
