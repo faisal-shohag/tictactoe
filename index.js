@@ -76,7 +76,7 @@ db.ref('playerWonShow').on('value', pw=>{
   }
 
   if(pw.val().won === 3){
-    db.ref('playerWonShow').update({won: lastWon});
+    db.ref('playerWonShow').update({won: 4});
     setTimeout(function(){
   
       Swal.fire({
