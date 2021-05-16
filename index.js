@@ -45,10 +45,10 @@ db.ref('playerWon').on('value', lw=>{
 db.ref('playerWonShow').on('value', pw=>{
   playerOneTurns=[];
   playerOneTurns=[];
+  db.ref('playerWonShow').update({won: 0});
   let rn =  Math.floor(Math.random() * 8)
   if(pw.val().won === 1){
     setTimeout(function(){
-      db.ref('playerWonShow').update({won: 0});
       Swal.fire({
         title: `${oyshi[rn]} জিতসে!`,
         confirmButtonText: 'Okk!'
@@ -61,8 +61,9 @@ db.ref('playerWonShow').on('value', pw=>{
   }
 
   if(pw.val().won === 2){
+    db.ref('playerWonShow').update({won: 0});
     setTimeout(function(){
-      db.ref('playerWonShow').update({won: 0});
+     
       Swal.fire({
         title: 'ফয়সাল জিতসে!',
         confirmButtonText: 'Okk!'
@@ -75,8 +76,9 @@ db.ref('playerWonShow').on('value', pw=>{
   }
 
   if(pw.val().won === 3){
+    db.ref('playerWonShow').update({won: lastWon});
     setTimeout(function(){
-      db.ref('playerWonShow').update({won: 0});
+  
       Swal.fire({
         title: 'তুমিও হারসো আমিও হারসি!',
         confirmButtonText: 'Okk!',
@@ -250,8 +252,7 @@ function winner(p, t1){
     }
 
 
-  }
-    if(playerOneTurns.length===5 || playerTwoTurn.length===5){
+  }else if(t1.length===5){
       db.ref('playerWon').update({won: lastWon});
       db.ref('playerWonShow').update({won: 3});
       setTimeout(function(){gameReset();}, 2000);
